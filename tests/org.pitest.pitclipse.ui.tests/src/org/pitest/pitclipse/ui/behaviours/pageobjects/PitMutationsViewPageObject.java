@@ -62,14 +62,14 @@ public class PitMutationsViewPageObject {
 
     public SWTBotView getView() {
         // let's close the Console view first, otherwise it seems
-        // to block the opening of "PIT Mutations"
+        // to block the opening of "Mutation List"
         PAGES.getConsole().close();
-        SWTBotView mutationsView = bot.viewByTitle("PIT Mutations");
+        SWTBotView mutationsView = bot.viewByTitle("Mutation List");
         mutationsView.show();
         mutationsView.setFocus();
-        // Make sure the 'PIT Mutations' view is opened
+        // Make sure the 'Mutation List' view is opened
         // this should not be required anymore
-        // bot.waitUntil(new ViewOpenedCondition(bot, "PIT Mutations"));
+        // bot.waitUntil(new ViewOpenedCondition(bot, "Mutation List"));
         return mutationsView;
     }
 
@@ -166,7 +166,7 @@ public class PitMutationsViewPageObject {
                 }
             }
             throw new AssertionFailedError(
-                    "Cannot select mutation from the PIT Mutations view: no mutation with status '" + status + "' is shown (" + mutation + ")");
+                    "Cannot select mutation from the Mutation List view: no mutation with status '" + status + "' is shown (" + mutation + ")");
         }
 
         public static MutationsTree from(SWTBotTree mutationTree) {
@@ -195,7 +195,7 @@ public class PitMutationsViewPageObject {
                 }
             }
             throw new AssertionFailedError(
-                    "Cannot select mutation from the PIT Mutations view: no mutation with project '" + mutation.getProject() + "' is shown (" + mutation + ")");
+                    "Cannot select mutation from the Mutation List view: no mutation with project '" + mutation.getProject() + "' is shown (" + mutation + ")");
         }
 
         public static StatusTree from(SWTBotTreeItem statusTree) {
@@ -226,7 +226,7 @@ public class PitMutationsViewPageObject {
                 }
             }
             throw new AssertionFailedError(
-                    "Cannot select mutation from the PIT Mutations view: no mutation with package '" + mutation.getPkg() + "' is shown (" + mutation + ")");
+                    "Cannot select mutation from the Mutation List view: no mutation with package '" + mutation.getPkg() + "' is shown (" + mutation + ")");
         }
 
         public static ProjectTree from(SWTBotTreeItem projectTree) {
@@ -257,7 +257,7 @@ public class PitMutationsViewPageObject {
                 }
             }
             throw new AssertionFailedError(
-                    "Cannot select mutation from the PIT Mutations view: no mutation of class '" + mutation.getClassName() + "' is shown (" + mutation + ")");
+                    "Cannot select mutation from the Mutation List view: no mutation of class '" + mutation.getClassName() + "' is shown (" + mutation + ")");
         }
 
         public static PackageTree from(SWTBotTreeItem packageTree) {
@@ -289,7 +289,7 @@ public class PitMutationsViewPageObject {
                 }
             }
             throw new AssertionFailedError(
-                    "Cannot select mutation from the PIT Mutations view: no mutation defined as \"" + mutation.getLineNumber() + "\"" +
+                    "Cannot select mutation from the Mutation List view: no mutation defined as \"" + mutation.getLineNumber() + "\"" +
                     " and located at line " + mutation.getLineNumber() + " is shown (" + mutation + ")");
         }
 
@@ -378,7 +378,7 @@ public class PitMutationsViewPageObject {
         while (backgroundJobsAreRunning) {
             boolean fifteenSecondsElapsed = System.currentTimeMillis() - timeAtStart >= 15000;
             if (fifteenSecondsElapsed) {
-                throw new TimeoutException("After waiting 15s the PIT Mutations view still has jobs running in background." +
+                throw new TimeoutException("After waiting 15s the Mutation List view still has jobs running in background." +
                                            "An infinite loop is suspected, please check the code. " +
                                            "Tests are moving on which may lead some assertions to fail.");
             }

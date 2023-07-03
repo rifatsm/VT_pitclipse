@@ -109,7 +109,7 @@ public class RunConfigurationSelector implements Closeable {
     }
 
     private SWTBotTreeItem getPitConfigurationItem() {
-        final String itemName = "PIT Mutation Test";
+        final String itemName = "Mutation Test";
         for (SWTBotTreeItem treeItem : bot.tree().getAllItems()) {
             if (itemName.equals(treeItem.getText())) {
                 return treeItem.select().expand();
