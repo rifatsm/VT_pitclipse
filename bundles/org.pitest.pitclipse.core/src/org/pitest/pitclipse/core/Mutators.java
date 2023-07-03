@@ -28,7 +28,7 @@ import org.pitest.mutationtest.engine.gregor.config.Mutator;
  */
 public enum Mutators {
     CUSTOM("Custom mutator data", "This is used for the custom settings of mutators and should not be seen by the user."),
-    OLD_DEFAULTS("Old defaults", "&Old default Mutators"),
+    OLD_DEFAULTS("VT defaults", "&Old default Mutators"),
     DEFAULTS("Defaults", "&Default Mutators"),
     STRONGER("Stronger defaults", "&Stronger Mutators"),
     ALL("All", "&All Mutators"),
