@@ -48,7 +48,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.Mockito.when;
 import static org.pitest.pitclipse.runner.results.DetectionStatus.KILLED;
-import static org.pitest.pitclipse.runner.results.DetectionStatus.SURVIVED;
+import static org.pitest.pitclipse.runner.results.DetectionStatus.LINES_NEEDING_BETTER_TESTING;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ModelBuilderTest {
@@ -155,7 +155,7 @@ public class ModelBuilderTest {
         List<ProjectMutations> project1KilledMutations = ImmutableList.of(expectedKilledMutationsForProject1());
         List<ProjectMutations> project1SurvivedMutations = ImmutableList.of(expectedSurvivedMutationsForProject1());
         List<Status> statuses = ImmutableList.of(
-                Status.builder().withDetectionStatus(SURVIVED).withProjectMutations(project1SurvivedMutations).build(),
+                Status.builder().withDetectionStatus(LINES_NEEDING_BETTER_TESTING).withProjectMutations(project1SurvivedMutations).build(),
                 Status.builder().withDetectionStatus(KILLED).withProjectMutations(project1KilledMutations).build());
         expectedModel = MutationsModel.make(statuses);
     }
@@ -174,7 +174,7 @@ public class ModelBuilderTest {
     }
 
     private PackageMutations packageBMutations() {
-        List<Mutation> mutationsForClassB = ImmutableList.of(Mutation.builder().withStatus(SURVIVED)
+        List<Mutation> mutationsForClassB = ImmutableList.of(Mutation.builder().withStatus(LINES_NEEDING_BETTER_TESTING)
                 .withMutator(MUTATOR).withLineNumber(345).build());
         ClassMutations classB = ClassMutations.builder().withClassName(CLASS_B).withMutations(mutationsForClassB)
                 .build();
@@ -197,7 +197,7 @@ public class ModelBuilderTest {
     }
 
     private PackageMutations packageASurvivedMutations() {
-        List<Mutation> mutationsForClassA = ImmutableList.of(Mutation.builder().withStatus(SURVIVED)
+        List<Mutation> mutationsForClassA = ImmutableList.of(Mutation.builder().withStatus(LINES_NEEDING_BETTER_TESTING)
                 .withMutator(MUTATOR).withLineNumber(234).build());
         ClassMutations classA = ClassMutations.builder().withClassName(CLASS_A).withMutations(mutationsForClassA)
                 .build();
@@ -226,7 +226,7 @@ public class ModelBuilderTest {
         }
 
         public TestClassContext hasASurvivingMutationOnLine(int line) {
-            mutations.put(line, SURVIVED);
+            mutations.put(line, LINES_NEEDING_BETTER_TESTING);
             return this;
         }
 
@@ -322,7 +322,7 @@ public class ModelBuilderTest {
         }
 
         public CountContext andTheNumberOfSurvivedPackageMutationsIs(String pkg, long count) {
-            assertThat(countMutationsInPackage(pkg, SURVIVED), is(equalTo(count)));
+            assertThat(countMutationsInPackage(pkg, LINES_NEEDING_BETTER_TESTING), is(equalTo(count)));
             return this;
         }
 
@@ -332,7 +332,7 @@ public class ModelBuilderTest {
         }
 
         public CountContext andTheNumberOfSurvivedClassMutationsWillBe(String pkg, String className, long count) {
-            assertThat(countMutationsForClass(pkg, className, SURVIVED), is(equalTo(count)));
+            assertThat(countMutationsForClass(pkg, className, LINES_NEEDING_BETTER_TESTING), is(equalTo(count)));
             return this;
         }
 

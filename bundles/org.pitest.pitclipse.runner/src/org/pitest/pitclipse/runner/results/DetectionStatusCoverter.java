@@ -39,8 +39,8 @@ public class DetectionStatusCoverter {
                 return DetectionStatus.RUN_ERROR;
             case STARTED:
                 return DetectionStatus.STARTED;
-            case SURVIVED:
-                return DetectionStatus.SURVIVED;
+            case LINES_NEEDING_BETTER_TESTING:
+                return DetectionStatus.LINES_NEEDING_BETTER_TESTING;
             case TIMED_OUT:
                 return DetectionStatus.TIMED_OUT;
             case NO_COVERAGE:

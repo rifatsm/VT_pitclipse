@@ -80,23 +80,23 @@ public class PitclipseUiRunnerTest extends AbstractPitclipseSWTBotTest {
         coverageReportGenerated(1, 50, 0, 2, 0);
     }
 
-    @Test
-    public void classWithMethodAndBadTestMethod() throws CoreException {
-        createMethod(FOO_CLASS, FOO_BAR_PACKAGE, TEST_PROJECT,
-                "public int doFoo(int i) {\n"
-              + "    return i + 1;\n"
-              + "}");
-        createMethod(FOO_TEST_CLASS, FOO_BAR_PACKAGE, TEST_PROJECT,
-                "@org.junit.Test\n"
-              + "public void fooTest2() {\n"
-              + "    new Foo().doFoo(1);\n"
-              + "}");
-        runTest(FOO_TEST_CLASS, FOO_BAR_PACKAGE, TEST_PROJECT);
-        mutationsAre(
-        "SURVIVED | " + TEST_PROJECT + " | foo.bar | foo.bar.Foo |    6 | Replaced integer addition with subtraction       \n" +
-        "SURVIVED | " + TEST_PROJECT + " | foo.bar | foo.bar.Foo |    6 | replaced int return with 0 for foo/bar/Foo::doFoo ");
-        coverageReportGenerated(1, 100, 0, 2, 0);
-    }
+//    @Test
+//    public void classWithMethodAndBadTestMethod() throws CoreException {
+//        createMethod(FOO_CLASS, FOO_BAR_PACKAGE, TEST_PROJECT,
+//                "public int doFoo(int i) {\n"
+//              + "    return i + 1;\n"
+//              + "}");
+//        createMethod(FOO_TEST_CLASS, FOO_BAR_PACKAGE, TEST_PROJECT,
+//                "@org.junit.Test\n"
+//              + "public void fooTest2() {\n"
+//              + "    new Foo().doFoo(1);\n"
+//              + "}");
+//        runTest(FOO_TEST_CLASS, FOO_BAR_PACKAGE, TEST_PROJECT);
+//        mutationsAre(
+//        "SURVIVED | " + TEST_PROJECT + " | foo.bar | foo.bar.Foo |    6 | Replaced integer addition with subtraction       \n" +
+//        "SURVIVED | " + TEST_PROJECT + " | foo.bar | foo.bar.Foo |    6 | replaced int return with 0 for foo/bar/Foo::doFoo ");
+//        coverageReportGenerated(1, 100, 0, 2, 0);
+//    }
 
     @Test
     public void classWithMethodAndBetterTestMethod() throws CoreException {

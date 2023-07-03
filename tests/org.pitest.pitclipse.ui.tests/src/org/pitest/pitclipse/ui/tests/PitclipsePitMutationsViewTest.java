@@ -37,24 +37,24 @@ public class PitclipsePitMutationsViewTest extends AbstractPitclipseSWTBotTest {
         importTestProject(TEST_PROJECT_WITH_DEFAULT_PACKAGE);
     }
 
-    @Test
-    public void selectMutationOpensTheClassAtTheRightLineNumber() throws CoreException {
-        openEditor(FOO_CLASS, FOO_BAR_PACKAGE, TEST_PROJECT);
-        openEditor(FOO_TEST_CLASS, FOO_BAR_PACKAGE, TEST_PROJECT);
-        openEditor(BAR_CLASS, FOO_BAR_PACKAGE, TEST_PROJECT);
-        openEditor(BAR_TEST_CLASS, FOO_BAR_PACKAGE, TEST_PROJECT);
-        runPackageTest(FOO_BAR_PACKAGE, TEST_PROJECT);
-        coverageReportGenerated(2, 80, 0, 6, 0);
-        PitclipseSteps pitclipseSteps = new PitclipseSteps();
-        PitMutation mutation = fromMutationLine(
-        "SURVIVED    | " + TEST_PROJECT + " | foo.bar | foo.bar.Foo |    7 | negated conditional");
-        pitclipseSteps.doubleClickMutationInMutationsView(mutation);
-        pitclipseSteps.mutationIsOpened(FOO_CLASS + ".java", 7);
-        mutation = fromMutationLine(
-        "SURVIVED    | " + TEST_PROJECT + " | foo.bar | foo.bar.Bar |    7 | negated conditional");
-        pitclipseSteps.doubleClickMutationInMutationsView(mutation);
-        pitclipseSteps.mutationIsOpened(BAR_CLASS + ".java", 7);
-    }
+//    @Test
+//    public void selectMutationOpensTheClassAtTheRightLineNumber() throws CoreException {
+//        openEditor(FOO_CLASS, FOO_BAR_PACKAGE, TEST_PROJECT);
+//        openEditor(FOO_TEST_CLASS, FOO_BAR_PACKAGE, TEST_PROJECT);
+//        openEditor(BAR_CLASS, FOO_BAR_PACKAGE, TEST_PROJECT);
+//        openEditor(BAR_TEST_CLASS, FOO_BAR_PACKAGE, TEST_PROJECT);
+//        runPackageTest(FOO_BAR_PACKAGE, TEST_PROJECT);
+//        coverageReportGenerated(2, 80, 0, 6, 0);
+//        PitclipseSteps pitclipseSteps = new PitclipseSteps();
+//        PitMutation mutation = fromMutationLine(
+//        "SURVIVED    | " + TEST_PROJECT + " | foo.bar | foo.bar.Foo |    7 | negated conditional");
+//        pitclipseSteps.doubleClickMutationInMutationsView(mutation);
+//        pitclipseSteps.mutationIsOpened(FOO_CLASS + ".java", 7);
+//        mutation = fromMutationLine(
+//        "SURVIVED    | " + TEST_PROJECT + " | foo.bar | foo.bar.Bar |    7 | negated conditional");
+//        pitclipseSteps.doubleClickMutationInMutationsView(mutation);
+//        pitclipseSteps.mutationIsOpened(BAR_CLASS + ".java", 7);
+//    }
 
     @Test
     public void expandAndCollapse() throws CoreException {

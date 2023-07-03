@@ -23,7 +23,7 @@ import static org.pitest.pitclipse.runner.results.DetectionStatus.NOT_STARTED;
 import static org.pitest.pitclipse.runner.results.DetectionStatus.NO_COVERAGE;
 import static org.pitest.pitclipse.runner.results.DetectionStatus.RUN_ERROR;
 import static org.pitest.pitclipse.runner.results.DetectionStatus.STARTED;
-import static org.pitest.pitclipse.runner.results.DetectionStatus.SURVIVED;
+import static org.pitest.pitclipse.runner.results.DetectionStatus.LINES_NEEDING_BETTER_TESTING;
 import static org.pitest.pitclipse.runner.results.DetectionStatus.TIMED_OUT;
 
 import java.util.Collections;
@@ -48,7 +48,7 @@ public class MutationsModel implements Visitable, Countable {
         INSTANCE;
 
         private static final Map<DetectionStatus, Integer> STATUSES_IN_ORDER = indexMap(
-            SURVIVED, NOT_STARTED,
+        	LINES_NEEDING_BETTER_TESTING, NOT_STARTED,
             STARTED, KILLED, TIMED_OUT, NON_VIABLE,
             MEMORY_ERROR, RUN_ERROR, NO_COVERAGE);
 

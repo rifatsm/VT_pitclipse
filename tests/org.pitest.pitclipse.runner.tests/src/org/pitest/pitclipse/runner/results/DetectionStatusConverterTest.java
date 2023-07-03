@@ -20,7 +20,7 @@ public class DetectionStatusConverterTest {
         verifyConvertion(DetectionStatus.NOT_STARTED);
         verifyConvertion(DetectionStatus.RUN_ERROR);
         verifyConvertion(DetectionStatus.STARTED);
-        verifyConvertion(DetectionStatus.SURVIVED);
+        verifyConvertion(DetectionStatus.LINES_NEEDING_BETTER_TESTING);
         verifyConvertion(DetectionStatus.TIMED_OUT);
         verifyConvertion(DetectionStatus.NO_COVERAGE);
     }
