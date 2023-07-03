@@ -24,4 +24,22 @@
         <module>org.pitest.pitclipse.runner</module>
         <module>org.pitest.pitclipse.ui</module>
 	</modules>
+	
+	<build>
+		<plugins>
+			<plugin>
+      			<artifactId>maven-assembly-plugin</artifactId>
+      			<configuration>
+        			<archive>
+          				<manifest>
+            				<mainClass>org.pitest.pitclipse.runner.PitRunnerMain</mainClass>
+          				</manifest>
+        			</archive>
+        			<descriptorRefs>
+          				<descriptorRef>jar-with-dependencies</descriptorRef>
+        			</descriptorRefs>
+      			</configuration>
+    		</plugin>
+		</plugins>
+	</build>
 </project>
