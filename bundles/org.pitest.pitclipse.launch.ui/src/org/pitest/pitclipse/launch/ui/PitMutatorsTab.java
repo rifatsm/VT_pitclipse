@@ -61,7 +61,7 @@ public final class PitMutatorsTab extends AbstractLaunchConfigurationTab {
     public static final String NAME = "Mutators";
 
     private static final int NUMBER_OF_COLUMNS = Mutators.getMainGroup().size() + 2;
-    private static final String DESCRIPTION_TEXT = "Select the mutators used to alter the code.";
+    private static final String DESCRIPTION_TEXT = "Select the mutators used to alter the code (The Web-CAT uses `VT defaults` to assess test quality).";
     private static final String MUTATOR_LINK_TEXT = "See the documentation on Pitest.org";
     private static final String MUTATOR_LINK = "https://pitest.org/quickstart/mutators/";
     public static final String CUSTOM_MUTATOR_RADIO_TEXT = "Mutators selected below";
