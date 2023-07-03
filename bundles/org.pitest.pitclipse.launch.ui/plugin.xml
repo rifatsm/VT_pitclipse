@@ -12,11 +12,11 @@
     <shortcut
       id="org.pitest.pitclipse.launch.mutationTest.shortcut"
       class="org.pitest.pitclipse.launch.ui.PitLaunchShortcut"
-      label="PIT Mutation Test"
+      label="Mutation Test"
       icon="icons/pit.gif"
       modes="run">
       <contextualLaunch>
-        <contextLabel mode="run" label="PIT Mutation Test" />
+        <contextLabel mode="run" label="Mutation Test" />
         <enablement>
           
         </enablement>

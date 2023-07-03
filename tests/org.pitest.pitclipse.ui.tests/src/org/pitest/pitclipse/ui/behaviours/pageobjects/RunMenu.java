@@ -29,7 +29,7 @@ public class RunMenu {
 
     private static final String RUN = "Run";
     private static final String RUN_AS = "Run As";
-    private static final String PIT_MUTATION_TEST = "PIT Mutation Test";
+    private static final String PIT_MUTATION_TEST = "Mutation Test";
     private static final String JUNIT_TEST = "JUnit Test";
     private static final String RUN_CONFIGURATIONS = "Run Configurations";
     private final SWTWorkbenchBot bot;
