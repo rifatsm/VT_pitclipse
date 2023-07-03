@@ -35,7 +35,7 @@ Here is an introduction to how Pitclipse works.
 3. A [PitExecutionNotifier](org.pitest.pitclipse.core/src/org/pitest/pitclipse/core/launch/PitExecutionNotifier.java) is thus notified and launches a server in background to listen for PIT results
 4. Once PIT results are available, they are broadcasted through an [ExtensionPointResultHandler](org.pitest.pitclipse.core/src/org/pitest/pitclipse/core/launch/ExtensionPointResultHandler.java)
 5. A [MutationsModelNotifier](org.pitest.pitclipse.core/src/org/pitest/pitclipse/core/result/MutationsModelNotifier.java) is thus notified; it extracts the information about detected information and then broadcast them
-6. The _Mutation List_ and _PIT Summary_ views are thus notified and updated with PIT results.
+6. The _Mutation List_ and _Mutation Summary_ views are thus notified and updated with PIT results.
 
 ## How can I be notified when a new PIT application is launched?
 

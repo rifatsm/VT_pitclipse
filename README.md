@@ -36,7 +36,7 @@ Once the plug-in is installed (see [Installation](#Installation) below), you can
 - `Run As` > `PIT Mutation Test`
 
 Wait a few seconds, two views should open to show the results:
-- **PIT Summary**: shows the percentage of mutation coverage
+- **Mutation Summary**: shows the percentage of mutation coverage
 - **Mutation List**: shows the detected mutations and their location in code
 
 It is also possible to run a single JUnit test class. Specific PIT options can be configured from the Launch Configuration window:

@@ -147,7 +147,7 @@ public class WindowsMenu {
 
     public void openPitSummaryView() {
         bot.menu(WINDOWS).menu(SHOW_VIEW).menu(OTHER).click();
-        viewSelector.selectView("PIT", "PIT Summary");
+        viewSelector.selectView("PIT", "Mutation Summary");
     }
 
     public void openPitMutationsView() {
