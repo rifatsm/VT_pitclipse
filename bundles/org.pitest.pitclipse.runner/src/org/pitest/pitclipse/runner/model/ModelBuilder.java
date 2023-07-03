@@ -48,8 +48,11 @@ public class ModelBuilder {
     private List<Status> buildMutationModelFor(List<String> projects, Mutations mutations) {
         List<Status> statuses = new ArrayList<>();
         for (DetectionStatus status : DetectionStatus.values()) {
-            List<org.pitest.pitclipse.runner.results.Mutations.Mutation> mutationsForStatus = selectMutationsByStatus(
+        	List<org.pitest.pitclipse.runner.results.Mutations.Mutation> mutationsForStatus = new ArrayList<>();
+        	if (status.equals(DetectionStatus.LINES_NOT_TESTED) || status.equals(DetectionStatus.LINES_NEEDING_BETTER_TESTING)) {
+        		mutationsForStatus = selectMutationsByStatus(
                     mutations, status);
+        	}
             if (!mutationsForStatus.isEmpty()) {
                 List<ProjectMutations> projectMutations = new ArrayList<>();
                 for (String project : projects) {
