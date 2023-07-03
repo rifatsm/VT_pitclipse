@@ -33,7 +33,7 @@ Provides mutation coverage for your Java programs within the Eclipse IDE. Built 
 
 Once the plug-in is installed (see [Installation](#Installation) below), you can run Pitest:
 - Right-click on a Java project defining unit tests
-- `Run As` > `Mutation Test`
+- `Run As` > `PIT Mutation Test`
 
 Wait a few seconds, two views should open to show the results:
 - **PIT Summary**: shows the percentage of mutation coverage
@@ -41,7 +41,7 @@ Wait a few seconds, two views should open to show the results:
 
 It is also possible to run a single JUnit test class. Specific PIT options can be configured from the Launch Configuration window:
 - `Run` > `Run Configurations...`
-- Double-click on `Mutation Test`
+- Double-click on `PIT Mutation Test`
 - Specify the options
 - Press `Run`
 

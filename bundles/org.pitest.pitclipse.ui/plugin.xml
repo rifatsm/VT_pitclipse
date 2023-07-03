@@ -24,7 +24,7 @@
           icon="icons/pit.gif"
           id="org.pitest.pitclipse.ui.view.mutations.PitMutationsView"
           category="org.pitest.pitclipse.ui.view.category"
-          name="PIT Mutations"
+          name="Mutation List"
           restorable="true"/>
    </extension>
    <extension

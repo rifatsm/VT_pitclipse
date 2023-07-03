@@ -21,7 +21,7 @@ import org.pitest.pitclipse.runner.model.MutationsModel;
 import org.pitest.pitclipse.ui.view.PitViewFinder;
 
 /**
- * <p>Updates the <i>PIT Mutations</i> view with given PIT results.</p>
+ * <p>Updates the <i>Mutation List</i> view with given PIT results.</p>
  * 
  * <p>This class is registered through the {@code org.pitest.pitclipse.core.mutations.results} 
  * extension point and is hence called each time a new results are produced by PIT.</p>

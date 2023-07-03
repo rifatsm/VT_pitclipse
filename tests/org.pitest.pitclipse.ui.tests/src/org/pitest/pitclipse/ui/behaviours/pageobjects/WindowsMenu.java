@@ -152,7 +152,7 @@ public class WindowsMenu {
 
     public void openPitMutationsView() {
         bot.menu(WINDOWS).menu(SHOW_VIEW).menu(OTHER).click();
-        viewSelector.selectView("PIT", "PIT Mutations");
+        viewSelector.selectView("PIT", "Mutation List");
     }
 
     public Mutators getMutators() {
