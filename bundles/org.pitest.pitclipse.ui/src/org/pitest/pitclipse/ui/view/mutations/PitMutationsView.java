@@ -97,7 +97,9 @@ public class PitMutationsView extends ViewPart implements MutationsView {
         public void run() {
             // better not to expand the view to avoid UI freeze
             // see https://github.com/pitest/pitclipse/issues/147
+        	// uncomment `viewer.expandAll()` line if you want all groups to expand on creation       	
             viewer.setInput(mutations);
+//        	viewer.expandAll();
         }
     }
 
