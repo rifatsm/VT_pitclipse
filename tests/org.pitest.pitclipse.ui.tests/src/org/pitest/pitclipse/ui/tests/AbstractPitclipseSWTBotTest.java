@@ -391,8 +391,8 @@ public abstract class AbstractPitclipseSWTBotTest {
      * </pre>
      * 
      * <pre>
-     * "NO_COVERAGE | project1 | foo.bar | foo.bar.Foo | 6 | Replaced integer addition with subtraction       \n" +
-     * "NO_COVERAGE | project1 | foo.bar | foo.bar.Foo | 6 | replaced int return with 0 for foo/bar/Foo::doFoo "
+     * "LINES_NOT_TESTED | project1 | foo.bar | foo.bar.Foo | 6 | Replaced integer addition with subtraction       \n" +
+     * "LINES_NOT_TESTED | project1 | foo.bar | foo.bar.Foo | 6 | replaced int return with 0 for foo/bar/Foo::doFoo "
      * </pre>
      * 
      * @param expectedMutationsTable

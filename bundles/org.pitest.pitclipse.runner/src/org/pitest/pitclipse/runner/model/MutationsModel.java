@@ -20,7 +20,7 @@ import static org.pitest.pitclipse.runner.results.DetectionStatus.KILLED;
 import static org.pitest.pitclipse.runner.results.DetectionStatus.MEMORY_ERROR;
 import static org.pitest.pitclipse.runner.results.DetectionStatus.NON_VIABLE;
 import static org.pitest.pitclipse.runner.results.DetectionStatus.NOT_STARTED;
-import static org.pitest.pitclipse.runner.results.DetectionStatus.NO_COVERAGE;
+import static org.pitest.pitclipse.runner.results.DetectionStatus.LINES_NOT_TESTED;
 import static org.pitest.pitclipse.runner.results.DetectionStatus.RUN_ERROR;
 import static org.pitest.pitclipse.runner.results.DetectionStatus.STARTED;
 import static org.pitest.pitclipse.runner.results.DetectionStatus.LINES_NEEDING_BETTER_TESTING;
@@ -50,7 +50,7 @@ public class MutationsModel implements Visitable, Countable {
         private static final Map<DetectionStatus, Integer> STATUSES_IN_ORDER = indexMap(
         	LINES_NEEDING_BETTER_TESTING, NOT_STARTED,
             STARTED, KILLED, TIMED_OUT, NON_VIABLE,
-            MEMORY_ERROR, RUN_ERROR, NO_COVERAGE);
+            MEMORY_ERROR, RUN_ERROR, LINES_NOT_TESTED);
 
         /**
          * Returns a map from the ith element of list to i.

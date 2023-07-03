@@ -75,8 +75,8 @@ public class PitclipseUiRunnerTest extends AbstractPitclipseSWTBotTest {
               + "}");
         runTest(FOO_TEST_CLASS, FOO_BAR_PACKAGE, TEST_PROJECT);
         mutationsAre(
-        "NO_COVERAGE | " + TEST_PROJECT + " | foo.bar | foo.bar.Foo |    6 | Replaced integer addition with subtraction       \n" +
-        "NO_COVERAGE | " + TEST_PROJECT + " | foo.bar | foo.bar.Foo |    6 | replaced int return with 0 for foo/bar/Foo::doFoo ");
+        "LINES_NOT_TESTED | " + TEST_PROJECT + " | foo.bar | foo.bar.Foo |    6 | Replaced integer addition with subtraction       \n" +
+        "LINES_NOT_TESTED | " + TEST_PROJECT + " | foo.bar | foo.bar.Foo |    6 | replaced int return with 0 for foo/bar/Foo::doFoo ");
         coverageReportGenerated(1, 50, 0, 2, 0);
     }
 

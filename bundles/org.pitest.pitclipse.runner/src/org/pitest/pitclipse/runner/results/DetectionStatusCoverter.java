@@ -43,9 +43,9 @@ public class DetectionStatusCoverter {
                 return DetectionStatus.LINES_NEEDING_BETTER_TESTING;
             case TIMED_OUT:
                 return DetectionStatus.TIMED_OUT;
-            case NO_COVERAGE:
+            case LINES_NOT_TESTED:
             default:
-                return DetectionStatus.NO_COVERAGE;
+                return DetectionStatus.LINES_NOT_TESTED;
         }
     }
 

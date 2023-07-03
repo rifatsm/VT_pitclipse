@@ -22,7 +22,7 @@ public class DetectionStatusConverterTest {
         verifyConvertion(DetectionStatus.STARTED);
         verifyConvertion(DetectionStatus.LINES_NEEDING_BETTER_TESTING);
         verifyConvertion(DetectionStatus.TIMED_OUT);
-        verifyConvertion(DetectionStatus.NO_COVERAGE);
+        verifyConvertion(DetectionStatus.LINES_NOT_TESTED);
     }
 
     private void verifyConvertion(DetectionStatus status) {

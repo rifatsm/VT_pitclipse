@@ -22,7 +22,7 @@ import static com.google.common.collect.Collections2.transform;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.pitest.mutationtest.DetectionStatus.KILLED;
-import static org.pitest.mutationtest.DetectionStatus.NO_COVERAGE;
+import static org.pitest.mutationtest.DetectionStatus.LINES_NOT_TESTED;
 import static org.pitest.pitclipse.runner.TestFactory.TEST_FACTORY;
 
 import java.math.BigInteger;
@@ -54,7 +54,7 @@ import com.google.common.collect.ImmutableMap;
 
 class SummaryResultListenerTestData {
     public static ClassMutationResults anUncoveredMutationOnFoo() {
-        return aClassMutationResultForFooWithStatus(NO_COVERAGE);
+        return aClassMutationResultForFooWithStatus(LINES_NOT_TESTED);
     }
 
     public static ClassMutationResults aCoveredMutationOnFoo() {
@@ -70,7 +70,7 @@ class SummaryResultListenerTestData {
     }
 
     public static CoverageDatabase fooHasNoLineCoverage() {
-        return CoverageTestData.FOO_WITH_NO_COVERAGE.coverageDatabase;
+        return CoverageTestData.FOO_WITH_LINES_NOT_TESTED.coverageDatabase;
     }
 
     public static CoverageDatabase fooHasFullLineCoverage() {
@@ -91,7 +91,7 @@ class SummaryResultListenerTestData {
     private static class CoverageTestData {
 
         public static final CoverageTestData FOO_WITH_FULL_COVERAGE = new CoverageTestData(Foo.class, fooInfo(1), 1);
-        public static final CoverageTestData FOO_WITH_NO_COVERAGE = new CoverageTestData(Foo.class, fooInfo(1), 0);
+        public static final CoverageTestData FOO_WITH_LINES_NOT_TESTED = new CoverageTestData(Foo.class, fooInfo(1), 0);
 
         public final ClassName className;
         public final ClassInfo classInfo;

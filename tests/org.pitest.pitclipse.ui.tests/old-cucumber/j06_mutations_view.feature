@@ -15,10 +15,10 @@ Feature: Mutation view shows analysis results
       | status      | project  | package | class       | line | mutation                                                     |
       | SURVIVED    | project1 | foo.bar | foo.bar.Bar |    9 | negated conditional                                          |
       | SURVIVED    | project1 | foo.bar | foo.bar.Foo |    9 | negated conditional                                          |
-      | NO_COVERAGE | project1 | foo.bar | foo.bar.Bar |   10 | Replaced integer addition with subtraction                   |
-      | NO_COVERAGE | project1 | foo.bar | foo.bar.Bar |   10 | replaced int return with 0 for foo/bar/Bar::f                |
-      | NO_COVERAGE | project1 | foo.bar | foo.bar.Foo |   10 | Replaced integer addition with subtraction                   |
-      | NO_COVERAGE | project1 | foo.bar | foo.bar.Foo |   10 | replaced int return with 0 for foo/bar/Foo::f                |
+      | LINES_NOT_TESTED | project1 | foo.bar | foo.bar.Bar |   10 | Replaced integer addition with subtraction                   |
+      | LINES_NOT_TESTED | project1 | foo.bar | foo.bar.Bar |   10 | replaced int return with 0 for foo/bar/Bar::f                |
+      | LINES_NOT_TESTED | project1 | foo.bar | foo.bar.Foo |   10 | Replaced integer addition with subtraction                   |
+      | LINES_NOT_TESTED | project1 | foo.bar | foo.bar.Foo |   10 | replaced int return with 0 for foo/bar/Foo::f                |
 
   Scenario: Selecting a mutation opens the class in question at the right line number
     When the following mutation is selected
@@ -36,10 +36,10 @@ Feature: Mutation view shows analysis results
       | SURVIVED    | project1 | foo.bar | foo.bar.Bar |    9 | removed conditional - replaced equality check with false     |
       | SURVIVED    | project1 | foo.bar | foo.bar.Foo |    9 | negated conditional                                          |
       | SURVIVED    | project1 | foo.bar | foo.bar.Foo |    9 | removed conditional - replaced equality check with false     |
-      | NO_COVERAGE | project1 | foo.bar | foo.bar.Bar |   10 | Replaced integer addition with subtraction                   |
-      | NO_COVERAGE | project1 | foo.bar | foo.bar.Bar |   10 | replaced int return with 0 for foo/bar/Bar::f                |
-      | NO_COVERAGE | project1 | foo.bar | foo.bar.Foo |   10 | Replaced integer addition with subtraction                   |
-      | NO_COVERAGE | project1 | foo.bar | foo.bar.Foo |   10 | replaced int return with 0 for foo/bar/Foo::f                |
+      | LINES_NOT_TESTED | project1 | foo.bar | foo.bar.Bar |   10 | Replaced integer addition with subtraction                   |
+      | LINES_NOT_TESTED | project1 | foo.bar | foo.bar.Bar |   10 | replaced int return with 0 for foo/bar/Bar::f                |
+      | LINES_NOT_TESTED | project1 | foo.bar | foo.bar.Foo |   10 | Replaced integer addition with subtraction                   |
+      | LINES_NOT_TESTED | project1 | foo.bar | foo.bar.Foo |   10 | replaced int return with 0 for foo/bar/Foo::f                |
 
   # This scenario does not pass anymore
   # This is likely due to the fact that Eclipse IDE creates new launch configuration
@@ -67,9 +67,9 @@ Feature: Mutation view shows analysis results
 #      | SURVIVED    | project1 | foo.bar | foo.bar.Foo |   12 | replaced return of integer sized value with (x == 0 ? 1 : 0) |
 #      | KILLED      | project1 | foo.bar | foo.bar.Bar |    8 | removed call to java/util/ArrayList::<init>                  |
 #      | KILLED      | project1 | foo.bar | foo.bar.Foo |    8 | removed call to java/util/ArrayList::<init>                  |
-#      | NO_COVERAGE | project1 | foo.bar | foo.bar.Bar |   10 | Replaced integer addition with subtraction                   |
-#      | NO_COVERAGE | project1 | foo.bar | foo.bar.Bar |   10 | Substituted 1 with 0                                         |
-#      | NO_COVERAGE | project1 | foo.bar | foo.bar.Bar |   10 | replaced return of integer sized value with (x == 0 ? 1 : 0) |
-#      | NO_COVERAGE | project1 | foo.bar | foo.bar.Foo |   10 | Replaced integer addition with subtraction                   |
-#      | NO_COVERAGE | project1 | foo.bar | foo.bar.Foo |   10 | Substituted 1 with 0                                         |
-#      | NO_COVERAGE | project1 | foo.bar | foo.bar.Foo |   10 | replaced return of integer sized value with (x == 0 ? 1 : 0) |
+#      | LINES_NOT_TESTED | project1 | foo.bar | foo.bar.Bar |   10 | Replaced integer addition with subtraction                   |
+#      | LINES_NOT_TESTED | project1 | foo.bar | foo.bar.Bar |   10 | Substituted 1 with 0                                         |
+#      | LINES_NOT_TESTED | project1 | foo.bar | foo.bar.Bar |   10 | replaced return of integer sized value with (x == 0 ? 1 : 0) |
+#      | LINES_NOT_TESTED | project1 | foo.bar | foo.bar.Foo |   10 | Replaced integer addition with subtraction                   |
+#      | LINES_NOT_TESTED | project1 | foo.bar | foo.bar.Foo |   10 | Substituted 1 with 0                                         |
+#      | LINES_NOT_TESTED | project1 | foo.bar | foo.bar.Foo |   10 | replaced return of integer sized value with (x == 0 ? 1 : 0) |

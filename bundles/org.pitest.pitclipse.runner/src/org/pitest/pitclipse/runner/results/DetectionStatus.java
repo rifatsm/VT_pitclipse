@@ -18,7 +18,7 @@ package org.pitest.pitclipse.runner.results;
 
 public enum DetectionStatus {
 
-    KILLED, LINES_NEEDING_BETTER_TESTING, TIMED_OUT, NON_VIABLE, MEMORY_ERROR, NOT_STARTED, STARTED, RUN_ERROR, NO_COVERAGE;
+    KILLED, LINES_NEEDING_BETTER_TESTING, TIMED_OUT, NON_VIABLE, MEMORY_ERROR, NOT_STARTED, STARTED, RUN_ERROR, LINES_NOT_TESTED;
 
     public static DetectionStatus fromValue(String v) {
         return valueOf(v);

@@ -35,8 +35,8 @@ Feature: Code mutation analysis
     Then a coverage report is generated with 1 classes tested with overall coverage of 50% and mutation coverage of 0%
     And the mutation results are
       | status      | project  | package | class       | line | mutation                                                     |
-      | NO_COVERAGE | project1 | foo.bar | foo.bar.Foo |    6 | Replaced integer addition with subtraction                   |
-      | NO_COVERAGE | project1 | foo.bar | foo.bar.Foo |    6 | replaced int return with 0 for foo/bar/Foo::doFoo            |
+      | LINES_NOT_TESTED | project1 | foo.bar | foo.bar.Foo |    6 | Replaced integer addition with subtraction                   |
+      | LINES_NOT_TESTED | project1 | foo.bar | foo.bar.Foo |    6 | replaced int return with 0 for foo/bar/Foo::doFoo            |
 
   Scenario: Create a bad test for doFoo
     Given the class FooTest in package foo.bar in project project1 is selected
@@ -83,8 +83,8 @@ Feature: Code mutation analysis
       | status      | project  | package | class       | line | mutation                                                     |
       | SURVIVED    | project1 | foo.bar | foo.bar.Bar |    6 | replaced int return with 0 for foo/bar/Bar::doBar            |
       | KILLED      | project1 | foo.bar | foo.bar.Bar |    6 | Replaced integer subtraction with addition                   |
-      | NO_COVERAGE | project1 | foo.bar | foo.bar.Foo |    6 | Replaced integer addition with subtraction                   |
-      | NO_COVERAGE | project1 | foo.bar | foo.bar.Foo |    6 | replaced int return with 0 for foo/bar/Foo::doFoo            |
+      | LINES_NOT_TESTED | project1 | foo.bar | foo.bar.Foo |    6 | Replaced integer addition with subtraction                   |
+      | LINES_NOT_TESTED | project1 | foo.bar | foo.bar.Foo |    6 | replaced int return with 0 for foo/bar/Foo::doFoo            |
     When tests in package foo.bar are run for project project1
     Then a coverage report is generated with 2 classes tested with overall coverage of 100% and mutation coverage of 75%
     And the mutation results are
