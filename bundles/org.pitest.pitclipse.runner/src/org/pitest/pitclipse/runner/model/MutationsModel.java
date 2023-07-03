@@ -48,9 +48,9 @@ public class MutationsModel implements Visitable, Countable {
         INSTANCE;
 
         private static final Map<DetectionStatus, Integer> STATUSES_IN_ORDER = indexMap(
-        	LINES_NEEDING_BETTER_TESTING, NOT_STARTED,
+        	LINES_NOT_TESTED, LINES_NEEDING_BETTER_TESTING, NOT_STARTED,
             STARTED, KILLED, TIMED_OUT, NON_VIABLE,
-            MEMORY_ERROR, RUN_ERROR, LINES_NOT_TESTED);
+            MEMORY_ERROR, RUN_ERROR);
 
         /**
          * Returns a map from the ith element of list to i.
